@@ -23,3 +23,5 @@ const reverseNum = (number) => {
 }
 
 reverseNum(userNum);
+
+//2. determinar si un numero es feliz 5613 (56 mayor que 13)

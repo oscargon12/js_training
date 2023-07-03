@@ -16,7 +16,7 @@ const regularAlphabet = [
 const leetAlphabet = [
     '4', 'I3', '[', 'I>', '3', 'I=', '&', 'I-I', '1',
     ',_i', 'i<', '|', '/VL', 'L/I', '0', 'I°', '(_,)',
-    '|2', '5', '7', '(_)', 'L/', 'L/L/', '><', 'J', '2', ' ',
+    'I2', '5', '7', '(_)', 'L/', 'L/L/', '><', 'J', '2', ' ',
 ]
 
 let myPhrase = 'Oscar'
@@ -27,18 +27,21 @@ const leetLanguage = ( phrase ) =>{
         console.log('Frase original: ', phrase)
         console.log('traduciendo ...');
         
+        //1 Un string vacio que contendra el result
+        //2 Un for que recorra la frase de usuario
+        //3 Defino una variable de posicion en el alfabeto
+        //4 Capturo la posición de esos caracteres en regularAlphabet
+        //% sumo al resultado la posicion de las letras en el otro alfabeto
         let userPhrase = phrase.toLowerCase();
         let result = '';
 
-        for(let i = 0; i <= userPhrase.length - 1; i++){ //Un for que recorra la frase de usuario
-            let char = userPhrase[i] //Capturo los caracteres de la frase
-            let indexChar = regularAlphabet.indexOf(char); //Capturo la posición de esos caracteres en regularAlphabet
-            console.log(`${char} ${indexChar}`) 
+        userPhrase = userPhrase.split('');
+        for (const el of userPhrase) {
+            let indexChar = regularAlphabet.indexOf(el);
 
-            result += leetAlphabet[indexChar]; //result = result + cada posicion pero del otro alfabeto
+            result += leetAlphabet[indexChar];
         }
         return result;
-        
     } 
     else {
         console.log('Debes revisar la configuración de tu abecedario')

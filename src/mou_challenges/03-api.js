@@ -8,7 +8,7 @@
  * https://github.com/public-apis/public-apis
  */
 
-const RMApi = () => {
+/* const RMApi = () => {
     for(let i = 0; i >= 10; i++){
         let url = `https://rickandmortyapi.com/api/character${i}`;
 
@@ -20,4 +20,15 @@ const RMApi = () => {
     }
 }
 
-RMApi();
+RMApi(); */
+
+for(let i = 1; i <= 0; i++){
+    console.log(i)
+    let url = `https://rickandmortyapi.com/api/character/${i}`;
+
+    //fetch
+    fetch(url)
+        .then((res) => res.json())
+        .then((json) => console.log(json))
+        .catch((err) => console.log(err));
+}

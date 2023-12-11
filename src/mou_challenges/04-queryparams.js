@@ -6,13 +6,12 @@
  * los parámetros serían ["2023", "0"]
  */
 
-const paramGetValues = (param) => {
-    let paramsArr = param.split('=');
-    paramsArr.shift(0);
-    let firstParam = paramsArr[0].slice(0, 4)
-    paramsArr.shift(0);
-    paramsArr.unshift(firstParam);
-    return(paramsArr)
+const paramGetValues = (url) => {
+    let halfUrl = url.split('=');
+    firstParam = halfUrl[1].slice(0,4);
+    lastParam = halfUrl[2];
+    let params = [firstParam, lastParam];
+    return params;
 }
 
 console.log(paramGetValues('https://retosdeprogramacion.com?year=2023&challenge=0'))

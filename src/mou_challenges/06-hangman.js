@@ -12,3 +12,29 @@
  * - La palabra debe ocultar de forma aleatoria letras, y nunca puede comenzar ocultando más del 60%
  * - Puedes utilizar las palabras que quieras y el número de intentos que consideres
  */
+
+//console.log('Hi');
+
+const hangman = (hiddenWord) => {
+    try {
+        //Pintando la palabra
+        if(typeof hiddenWord != 'string' || hiddenWord.length < 2){
+            throw new Error('Debe ser una palabra de más de 2 caracteres')
+        }
+        let secretWord = hiddenWord.split('');
+        for(let i = 1; i < secretWord.length; i+=2){
+            secretWord[i] = '_'
+        }
+        console.log(secretWord);
+        let underWord = secretWord.join('');
+        console.log(`La palabra secreta es ${underWord}`);
+        console.log('Tienes 3 intentos');
+        
+        //Adivinando letras
+        let intentos = 3;
+    } catch (error) {
+        console.log('Se produjo el siguiente error:', error.message)
+    }
+}
+
+hangman('Calabozo');
